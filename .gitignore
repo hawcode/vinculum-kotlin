@@ -1,0 +1,12 @@
+target/
+
+# IntelliJ IDEA conf files
+\.idea/
+vinculum-kotlin\.iml
+
+# Eclipse conf files
+\.settings/
+\.classpath
+\.project
+
+*.iml

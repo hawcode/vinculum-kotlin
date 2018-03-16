@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.hawcode</groupId>
+    <artifactId>vinculum-kotlin</artifactId>
+    <version>0.0.1</version>
+    <packaging>jar</packaging>
+
+    <name>vinculum</name>
+    <description>Vinculum is a dependency for adding an abstraction layer in the development of applications.
+        It allows the developer to retrieve data from CMS-Headless DBs. The goal of the dependency is to decouple the
+        web content writing/creation tasks and the software development tasks.
+    </description>
+    <url></url>
+    <inceptionYear>2018</inceptionYear>
+
+    <licenses>
+        <license>
+            <name>GNU GENERAL PUBLIC LICENSE Version 3</name>
+            <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>Hawcode - Diseño Atómico S.L.</name>
+        <url>http://www.hawcode.com</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <name>Benjamin Vega</name>
+            <email>benjamin.vega@hawcode.com</email>
+            <organization>Hawcode - Diseño Atómico S.L.</organization>
+            <organizationUrl>http://www.hawcode.com</organizationUrl>
+        </developer>
+        <developer>
+            <name>Jose Lara</name>
+            <email>jose.lara@hawcode.com</email>
+            <organization>Hawcode - Diseño Atómico S.L.</organization>
+            <organizationUrl>http://www.hawcode.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git@github.com:hawcode/cms-connect.git</connection>
+        <developerConnection>scm:git:ssh://github.com:hawcode/cms-connect.git</developerConnection>
+        <url>https://github.com/hawcode/cms-connectr</url>
+    </scm>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <springframework.version>4.0.6.RELEASE</springframework.version>
+        <hibernate.version>4.3.6.Final</hibernate.version>
+        <junit.version>4.12</junit.version>
+        <mockito.version>2.13.0</mockito.version>
+        <h2.version>1.4.196</h2.version>
+        <kotlin.version>1.2.30</kotlin.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>org.springframework.maven.milestone</id>
+            <name>Spring Milestone Repository</name>
+            <url>http://maven.springframework.org/milestone/</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <jvmTarget>1.8</jvmTarget>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- Spring Framework -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <!-- Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+        <!-- Dependencies for tests -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>${h2.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-test</artifactId>
+            <version>${kotlin.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
